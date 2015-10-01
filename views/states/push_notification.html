@@ -1,0 +1,43 @@
+<div class="content">
+    <ul class="breadcrumb">
+        <li>
+            <p>YOU ARE HERE</p>
+        </li>
+        <li><a class="active">Push Notification</a> </li>
+    </ul>
+    <div class="row-fluid">
+        <div class="span12">
+            <div class="grid simple ">
+                <div class="grid-title">
+                    <h4 class="no-margin">Push Notification <span class="semi-bold">List</span></h4>
+                    <div class="tools">
+                        <button type="button" class="btn btn-default btn-cons btn-cons-md no-margin" ng-click="open()"><i class="fa fa-pencil-square-o"></i> Add New</button>
+                    </div>
+                </div>
+                <div class="grid-body ">
+                    <table class="table table-hover table-condensed" id="example">
+                        <thead>
+                        <tr>
+                            <th style="width:10%">Id</th>
+                            <th style="width:20%">Title</th>
+                            <th style="width:15%">Field</th>
+                            <th style="width:35%">Message</th>
+                            <th style="width:20%">Active</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="item in messages">
+                                <td>{{$index}}</td>
+                                <td>{{item.title}}</td>
+                                <td>{{item.field}}</td>
+                                <td>{{item.message}}</td>
+                                <td><i class="fa fa-times" ng-click="removeMessage(item)"></i></td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
