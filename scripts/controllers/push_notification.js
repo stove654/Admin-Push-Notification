@@ -10,7 +10,7 @@
 angular.module('PushApp')
   .controller('PushNotificationCtrl', function ($scope, $modal, PushNotificationFactory, toaster, $firebaseArray, APP_CONFIG, cfpLoadingBar) {
 
-    var list = $firebaseArray(new Firebase(APP_CONFIG.fireBaseUrl + 'messages'));
+    var list = $firebaseArray(new Firebase(APP_CONFIG.fireBaseUrl + 'news'));
 
     $scope.messages = list;
     $scope.totalItems = 64;
@@ -35,6 +35,7 @@ angular.module('PushApp')
 
       modalInstance.result.then(function (params) {
         cfpLoadingBar.start();
+        params.createAt = new Date();
         PushNotificationFactory.pushNotification(params).then(function (res) {
           list.$add(res.data).then(function (data) {
             toaster.pop('success', res.message);

@@ -20,17 +20,15 @@
                         <tr>
                             <th style="width:10%">Id</th>
                             <th style="width:20%">Title</th>
-                            <th style="width:15%">Field</th>
-                            <th style="width:35%">Message</th>
-                            <th style="width:20%">Active</th>
+                            <th style="width:15%">image</th>
+                            <th style="width:20%">Action</th>
                         </tr>
                         </thead>
                         <tbody>
                             <tr ng-repeat="item in messages">
                                 <td>{{$index}}</td>
                                 <td>{{item.title}}</td>
-                                <td>{{item.field}}</td>
-                                <td>{{item.message}}</td>
+                                <td><img ng-src="{{item.image}}" alt="" class="img-responsive"/></td>
                                 <td><i class="fa fa-times" ng-click="removeMessage(item)"></i></td>
                             </tr>
                         </tbody>
