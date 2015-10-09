@@ -9,7 +9,7 @@
  */
 angular.module('PushApp')
   .constant('APP_CONFIG', {
-    baseUrl: 'http://localhost:8080/api/',
+    baseUrl: 'http://104.131.180.88:8080/api/',
     fireBaseUrl: 'https://incandescent-fire-5015.firebaseio.com/',
-    urlImg: 'http://localhost:8080/static/'
+    urlImg: 'http://104.131.180.88:8080/static/'
   });
